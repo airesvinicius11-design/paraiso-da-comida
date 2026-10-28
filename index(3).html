@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paraíso da Comida – Restaurante familiar no Jardim Colombo</title>
+<meta name="description" content="Comida bem temperada, no ponto certo e com atendimento de família. Almoço no local, para viagem e entrega no Jardim Colombo, São Paulo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFBF2; --ink:#1E2A22; --muted:#55645A; --green:#143A2B; --green2:#1F5640;
+  --sun:#F4B63F; --chili:#C8381F; --card:#FFFFFF; --line:#E6DFCD; --on-green:#FFF7E3;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#101A14;--ink:#F3EEDF;--muted:#B5C0B7;--green:#0A241A;--green2:#1F5640;--card:#17251C;--line:#2A3B30;}
+}
+:root[data-theme="dark"]{--bg:#101A14;--ink:#F3EEDF;--muted:#B5C0B7;--green:#0A241A;--green2:#1F5640;--card:#17251C;--line:#2A3B30;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 "Nunito Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Nunito Sans",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent}
+.btn.call{background:var(--chili);color:#fff}
+.btn.map{border-color:var(--on-green);color:var(--on-green)}
+.btn:hover{filter:brightness(1.08)}
+
+header.hero{position:relative;overflow:hidden;background:var(--green);color:var(--on-green);padding:28px 0 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:64px}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+.status{font-size:.95rem;background:rgba(255,255,255,.1);padding:6px 14px;border-radius:999px}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);font-weight:800;max-width:14ch;letter-spacing:-.02em}
+.hero h1 span{display:block;color:var(--sun)}
+.hero p.lead{max-width:34em;font-size:1.2rem;margin:24px 0 32px;opacity:.95}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-art{position:absolute;right:4%;bottom:48px;width:min(380px,36vw)}
+@media (max-width:800px){.hero-art{display:none}}
+.rating{margin-top:36px;font-size:1rem;opacity:.9}
+.rating b{color:var(--sun);font-size:1.4rem}
+
+section{padding:72px 0}
+section h2{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;margin-bottom:12px}
+.sub{color:var(--muted);max-width:36em;margin:0 0 36px}
+.modes{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.mode{background:var(--card);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:26px}
+.mode h3{font-size:1.4rem;margin-bottom:8px}
+.mode p{margin:0;color:var(--muted)}
+
+.dishes{background:var(--sun);color:#2A1F05}
+.dishes .sub{color:#4A3A12}
+.dishlist{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.dish{background:#FFF3D4;border-radius:6px 26px 6px 26px;padding:28px}
+.dish h3{font-size:1.7rem;margin-bottom:8px}
+.dish p{margin:0}
+.dish svg{width:72px;height:auto;display:block;margin-bottom:12px}
+.why{list-style:none;padding:0;margin:0;display:grid;gap:18px 32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.why li{padding-left:36px;position:relative}
+.why li::before{content:"";position:absolute;left:0;top:.3em;width:22px;height:22px;border-radius:50%;background:var(--sun)}
+.why b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.2rem}
+.why span{color:var(--muted)}
+.note{margin-top:28px;font-weight:600}
+
+.quotes{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+blockquote p{margin:0 0 14px}
+blockquote footer{color:var(--muted);font-size:.95rem}
+
+.where{background:var(--green);color:var(--on-green)}
+.where .sub{color:#CFE0D3}
+.info{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.info dl{margin:0}
+.info dt{font-weight:700;color:var(--sun);margin-top:16px}
+.info dd{margin:2px 0 0}
+.info dt:first-child{margin-top:0}
+footer.end{padding:28px 0 110px;color:var(--muted);font-size:.95rem}
+
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--green);z-index:20}
+.bar a{flex:1;text-align:center;padding:12px;border-radius:999px;font-weight:700;text-decoration:none}
+.bar .c{background:var(--chili);color:#fff}
+.bar .m{border:2px solid var(--on-green);color:var(--on-green)}
+@media (max-width:700px){.bar{display:flex}.top{margin-bottom:44px}section{padding:56px 0}}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1{animation:rise .7s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#">Paraíso da Comida</a>
+      <span class="status" id="status">Restaurante familiar</span>
+    </div>
+    <h1>Almoço de família <span>com tempero de casa.</span></h1>
+    <p class="lead">No Jardim Colombo, você encontra comida bem temperada, servida na temperatura certa, num lugar limpo, organizado e acolhedor. Venha comer com a gente, leve para casa ou peça entrega.</p>
+    <div class="cta">
+      <a class="btn call" href="tel:+5511954930014">Ligar agora</a>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=R.+Sebasti%C3%A3o+Francisco%2C+155+-+Jardim+Colombo%2C+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noopener">Como chegar</a>
+    </div>
+    <p class="rating"><b>4,9</b> de 5 no Google, com 11 avaliações de quem já comeu aqui.</p>
+    <svg class="hero-art" viewBox="0 0 320 300" aria-hidden="true"><path d="M110 100c-16-24 16-34 0-62M160 100c-16-24 16-34 0-62M210 100c-16-24 16-34 0-62" stroke="#F4B63F" stroke-width="7" fill="none" stroke-linecap="round" opacity=".85"/><ellipse cx="160" cy="270" rx="80" ry="11" fill="#000" opacity=".25"/><path d="M40 130h240c0 70-50 125-120 125S40 200 40 130z" fill="#C8381F"/><ellipse cx="160" cy="130" rx="120" ry="28" fill="#8C2412"/><ellipse cx="160" cy="130" rx="104" ry="20" fill="#E0942E"/><circle cx="130" cy="128" r="7" fill="#F4B63F"/><circle cx="175" cy="133" r="6" fill="#F4B63F"/><circle cx="200" cy="125" r="5" fill="#F4B63F"/></svg>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>Do seu jeito</h2>
+    <p class="sub">Escolha como prefere receber a sua refeição.</p>
+    <div class="modes">
+      <div class="mode"><h3>Comer no local</h3><p>Um espaço acolhedor, pensado para almoçar sem pressa com a família.</p></div>
+      <div class="mode"><h3>Para viagem</h3><p>Passe aqui, pegue sua comida e leve para casa ou para o trabalho.</p></div>
+      <div class="mode"><h3>Entrega</h3><p>Ligue e peça. Pergunte pelo telefone se entregamos no seu endereço.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--card)">
+  <div class="wrap">
+    <h2>Por que o pessoal gosta daqui</h2>
+    <p class="sub">É o que os clientes mais repetem nas avaliações do Google.</p>
+    <ul class="why">
+      <li><b>Tempero bem acertado</b><span>Comida saborosa e bem temperada.</span></li>
+      <li><b>Na temperatura certa</b><span>Quente quando chega à mesa.</span></li>
+      <li><b>Limpo e organizado</b><span>Um lugar que dá gosto de frequentar.</span></li>
+      <li><b>Atendimento de família</b><span>De família pra família, com carinho.</span></li>
+      <li><b>Tem de tudo</b><span>Variedade para todo gosto no almoço.</span></li>
+      <li><b>Espaço de lazer</b><span>Um lugar bom para ficar e conversar.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="dishes">
+  <div class="wrap">
+    <h2>O que os clientes elogiam</h2>
+    <p class="sub">Dois pratos que aparecem com frequência nas conversas e nas avaliações.</p>
+    <div class="dishlist">
+      <div class="dish"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M8 26h48c0 14-10 24-24 24S8 40 8 26z" fill="#C8381F"/><ellipse cx="32" cy="26" rx="24" ry="6" fill="#8C2412"/><ellipse cx="32" cy="26" rx="20" ry="4" fill="#E0942E"/><path d="M22 18c-3-4 3-6 0-10M32 18c-3-4 3-6 0-10M42 18c-3-4 3-6 0-10" stroke="#8C5A00" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><h3>Caldo de mocotó</h3><p>Saboroso e bem servido. Um cliente indicou o caldo como ótima pedida, e ele já apareceu até nas atualizações de visitantes do Google.</p></div>
+      <div class="dish"><svg viewBox="0 0 64 56" aria-hidden="true"><rect x="10" y="16" width="44" height="24" rx="10" fill="#8A3B1D"/><path d="M20 18v20M32 18v20M44 18v20" stroke="#5E2410" stroke-width="3"/><circle cx="8" cy="22" r="5" fill="#FFF7E3"/><circle cx="8" cy="34" r="5" fill="#FFF7E3"/><circle cx="56" cy="22" r="5" fill="#FFF7E3"/><circle cx="56" cy="34" r="5" fill="#FFF7E3"/></svg><h3>Costela</h3><p>Uma cliente contou que não tinha comido costela melhor na região.</p></div>
+    </div>
+    <p class="note">Quer saber o cardápio de hoje? É só ligar para (11) 95493-0014.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Quem vem, volta</h2>
+    <p class="sub">Trechos de avaliações reais deixadas no Google. Respondemos cada uma com carinho.</p>
+    <div class="quotes">
+      <blockquote><p>“Comidas bem temperadas, atendimento de família pra família, tudo bem limpinho e organizado.”</p><footer>Avaliação no Google</footer></blockquote>
+      <blockquote><p>“A comida muito boa. A costela de lá, não comi nada melhor aqui nesta região.”</p><footer>Cristina Santos, Local Guide</footer></blockquote>
+      <blockquote><p>“Ótima comida e um lugar acolhedor de ir.”</p><footer>Avaliação no Google</footer></blockquote>
+      <blockquote><p>“Ótimo para pegar seu caldo ou sua comida, muito saboroso. Super indico.”</p><footer>Alexandre Feitoza</footer></blockquote>
+      <blockquote><p>“Tem de tudo lá, eu amei, valeu a experiência.”</p><footer>Avaliação no Google</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="where">
+  <div class="wrap">
+    <h2>Venha nos visitar</h2>
+    <p class="sub">Estamos no Jardim Colombo, zona sul de São Paulo.</p>
+    <div class="info">
+      <dl>
+        <dt>Endereço</dt><dd>R. Sebastião Francisco, 155<br>Jardim Colombo, São Paulo – SP<br>CEP 05662-070</dd>
+        <dt>Telefone</dt><dd><a href="tel:+5511954930014">(11) 95493-0014</a></dd>
+        <dt>Horário</dt><dd>Fechamos às 18h. Ligue para confirmar o horário dos outros dias.</dd>
+        <dt>Serviços</dt><dd>Refeição no local, para viagem e entrega</dd>
+        <dt>Código do local no Google Maps</dt><dd>97QC+C5 Jardim Colombo</dd>
+      </dl>
+      <div>
+        <p style="margin-top:0">Somos um restaurante familiar e adoramos receber quem chega. Venha almoçar com a gente.</p>
+        <div class="cta">
+          <a class="btn call" href="tel:+5511954930014">Ligar agora</a>
+          <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=R.+Sebasti%C3%A3o+Francisco%2C+155+-+Jardim+Colombo%2C+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noopener">Abrir no mapa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="end"><div class="wrap">© Paraíso da Comida · R. Sebastião Francisco, 155 · Jardim Colombo, São Paulo – SP</div></footer>
+
+<nav class="bar" aria-label="Contato rápido">
+  <a class="c" href="tel:+5511954930014">Ligar agora</a>
+  <a class="m" href="https://www.google.com/maps/search/?api=1&query=R.+Sebasti%C3%A3o+Francisco%2C+155+-+Jardim+Colombo%2C+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noopener">Como chegar</a>
+</nav>
+</body>
+</html>
